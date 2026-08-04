@@ -1,0 +1,96 @@
+Test Case ID,Module,Test Scenario,Test Steps,Expected Result,Priority,Test Type
+TC-001,User Registration,Verify user can register with valid details,"1. Navigate to Registration page
+2. Enter valid Name, Email, Password, Confirm Password
+3. Click Register",Account is created successfully; confirmation message/email is shown; user is redirected to login or homepage,High,Smoke
+TC-002,User Registration,Verify system rejects registration with an already-registered email,"1. Navigate to Registration page
+2. Enter an email that already exists in the system
+3. Fill remaining fields with valid data
+4. Click Register",System displays an error message: 'Email already registered'; account is not created,High,Negative
+TC-003,User Registration,Verify system validates password and confirm-password mismatch,"1. Navigate to Registration page
+2. Enter valid details
+3. Enter different values in Password and Confirm Password fields
+4. Click Register",System displays validation error: 'Passwords do not match'; registration is blocked,Medium,Negative
+TC-004,User Registration,Verify mandatory field validation on Registration form,"1. Navigate to Registration page
+2. Leave one or more mandatory fields blank
+3. Click Register",System displays 'This field is required' messages for each blank mandatory field; form is not submitted,Medium,Negative
+TC-005,User Registration,Verify email format validation on Registration form,"1. Navigate to Registration page
+2. Enter an invalid email format (e.g. 'abc@com')
+3. Fill remaining fields with valid data
+4. Click Register",System displays 'Invalid email format' error; registration is blocked,Medium,Negative
+TC-006,Login and Authentication,Verify user can log in with valid credentials,"1. Navigate to Login page
+2. Enter registered email and correct password
+3. Click Login",User is authenticated and redirected to the homepage/dashboard; username is displayed in the header,High,Smoke
+TC-007,Login and Authentication,Verify login fails with incorrect password,"1. Navigate to Login page
+2. Enter a registered email with an incorrect password
+3. Click Login",System displays 'Invalid email or password' error; user is not logged in,High,Negative
+TC-008,Login and Authentication,Verify login fails with unregistered email,"1. Navigate to Login page
+2. Enter an email that is not registered
+3. Enter any password
+4. Click Login",System displays 'Invalid email or password' error; user is not logged in,Medium,Negative
+TC-009,Login and Authentication,Verify 'Forgot Password' link sends a reset email,"1. Navigate to Login page
+2. Click 'Forgot Password'
+3. Enter registered email
+4. Click Submit",System displays confirmation that a password reset link has been sent to the registered email,Medium,Regression
+TC-010,Login and Authentication,Verify session is terminated after Logout,"1. Log in with valid credentials
+2. Click Logout
+3. Click browser Back button",User is logged out and redirected to the login/home page; protected pages are not accessible via Back button,High,Regression
+TC-011,Login and Authentication,Verify account lockout/behavior after multiple failed login attempts,"1. Navigate to Login page
+2. Enter a registered email with an incorrect password 5 times consecutively",System displays an appropriate lockout/warning message or CAPTCHA after repeated failed attempts,Low,Automation Candidate
+TC-012,Browse Book Catalog,Verify user can browse the full book catalog,"1. Navigate to homepage
+2. Click 'Browse Books' or catalog menu","List of available books is displayed with title, author, price, and cover image for each book",High,Smoke
+TC-013,Browse Book Catalog,Verify user can filter catalog by category/genre,"1. Navigate to catalog page
+2. Select a specific category (e.g. Fiction)",Only books belonging to the selected category are displayed,Medium,Regression
+TC-014,Browse Book Catalog,Verify pagination works correctly on the catalog page,"1. Navigate to catalog page with more than one page of results
+2. Click 'Next' page
+3. Click 'Previous' page",Correct set of books is displayed on each page; page number/indicator updates accordingly,Medium,Regression
+TC-015,Browse Book Catalog,Verify catalog displays 'No books available' when a category is empty,"1. Navigate to catalog page
+2. Select a category that currently has zero books",System displays an appropriate empty-state message instead of an error or blank page,Low,Negative
+TC-016,Search Books,Verify user can search for a book by exact title,"1. Navigate to homepage
+2. Enter the exact title of an existing book in the search bar
+3. Click Search",The matching book is displayed in the search results,High,Smoke
+TC-017,Search Books,Verify search returns relevant results for a partial keyword,"1. Enter a partial keyword (e.g. first 3 letters of a book title) in the search bar
+2. Click Search",All books whose title/author contains the keyword are displayed,Medium,Regression
+TC-018,Search Books,Verify search with no matching results displays an appropriate message,"1. Enter a random string that matches no book (e.g. 'zzzxcvqwe') in the search bar
+2. Click Search",System displays 'No results found' message; no error or broken page is shown,Medium,Negative
+TC-019,Search Books,Verify search field rejects/handles special characters and script input safely,"1. Enter special characters or a script tag (e.g. <script>alert(1)</script>) into the search bar
+2. Click Search",Input is safely handled/sanitized; no script executes and no application error occurs,High,Negative
+TC-020,Search Books,Verify search is case-insensitive,"1. Enter a book title in all uppercase or mixed case
+2. Click Search",Matching book(s) are returned regardless of case used in the search term,Low,Regression
+TC-021,View Book Details,Verify book detail page displays complete and correct information,"1. Navigate to catalog
+2. Click on a book","Book detail page displays title, author, price, description, cover image, and availability/stock status",High,Smoke
+TC-022,View Book Details,Verify 'Add to Cart' button is available and functional on the detail page,"1. Navigate to a book's detail page
+2. Click 'Add to Cart'",Book is added to the cart; cart icon/count updates; confirmation message is displayed,High,Smoke
+TC-023,View Book Details,Verify out-of-stock books are indicated and cannot be added to cart,1. Navigate to the detail page of a book with zero stock,'Out of Stock' label is displayed; 'Add to Cart' button is disabled or shows an appropriate message,Medium,Negative
+TC-024,Add Books to Cart,Verify user can add multiple different books to the cart,"1. Add Book A to cart
+2. Navigate back to catalog
+3. Add Book B to cart
+4. Open cart","Both books are listed in the cart with correct quantities, prices, and a correct subtotal",High,Smoke
+TC-025,Add Books to Cart,Verify user can update item quantity in the cart,"1. Open cart with at least one item
+2. Increase/decrease quantity using the quantity control
+3. Click Update",Quantity and line-item/subtotal totals update correctly and immediately,Medium,Regression
+TC-026,Add Books to Cart,Verify user can remove an item from the cart,"1. Open cart with at least one item
+2. Click 'Remove' on an item",Item is removed from the cart; totals recalculate correctly; empty-cart message shown if cart becomes empty,Medium,Regression
+TC-027,Add Books to Cart,Verify cart quantity cannot be set below 1 or above available stock,"1. Open cart with an item
+2. Attempt to set quantity to 0 or to a value greater than available stock",System prevents the invalid quantity and displays an appropriate validation message,Medium,Negative
+TC-028,Add Books to Cart,Verify cart contents persist after page refresh,"1. Add a book to cart
+2. Refresh the browser page",Cart still contains the previously added item(s) with correct quantities,Low,Regression
+TC-029,Checkout Process,Verify user can complete checkout with valid shipping and payment details,"1. Add item(s) to cart
+2. Proceed to Checkout
+3. Enter valid shipping address
+4. Enter valid payment details
+5. Click Place Order","Order is placed successfully; order summary is displayed with correct items, quantities, and total",High,Smoke
+TC-030,Checkout Process,Verify checkout is blocked when mandatory shipping fields are missing,"1. Proceed to Checkout
+2. Leave a mandatory shipping field blank
+3. Click Place Order",System displays validation error(s) and does not proceed to payment/order placement,High,Negative
+TC-031,Checkout Process,Verify checkout is blocked with an invalid/expired card,"1. Proceed to Checkout with a valid address
+2. Enter an invalid or expired card number
+3. Click Place Order",System displays a payment error message; order is not placed and cart remains unchanged,High,Negative
+TC-032,Checkout Process,Verify order total correctly includes tax and shipping charges,"1. Add item(s) to cart with a known price
+2. Proceed to Checkout
+3. Review order summary before placing order","Displayed total equals subtotal + tax + shipping, matching the system's stated calculation",Medium,Regression
+TC-033,Checkout Process,Verify user cannot checkout with an empty cart,"1. Ensure cart is empty
+2. Attempt to navigate directly to the Checkout page",User is redirected to the cart/homepage with a message indicating the cart is empty,Medium,Negative
+TC-034,Order Confirmation,Verify order confirmation page displays correct order details,1. Complete a successful checkout,"Confirmation page displays a unique Order ID, ordered items, quantities, total amount, and estimated delivery info",High,Smoke
+TC-035,Order Confirmation,Verify order confirmation email is sent after successful checkout,1. Complete a successful checkout using a valid registered email,An order confirmation email is received containing the Order ID and order summary,Medium,Regression
+TC-036,Order Confirmation,Verify placed order appears in the user's Order History,"1. Complete a successful checkout
+2. Navigate to 'My Orders' / Order History","The newly placed order appears in the order history with correct status, date, and total",Medium,Regression
