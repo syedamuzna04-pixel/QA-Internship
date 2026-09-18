@@ -1,31 +1,17 @@
-# Cypress Automation Project
+# Cypress Automation
 
 ## Project Overview
 
-This project demonstrates UI test automation for the [SauceDemo](https://www.saucedemo.com/) web application using the Cypress testing framework.
+This project demonstrates UI test automation for the **SauceDemo** web application using the **Cypress** testing framework.
 
-The project focuses on creating maintainable and reusable end-to-end tests by applying automation best practices such as:
+The project focuses on building maintainable end-to-end UI automation by applying:
 
 * Page Object Model (POM)
 * Reusable Cypress custom commands
 * Structured test suites
 * Positive and negative test scenarios
-* UI validation and product navigation
-
----
-
-## Learning Objectives
-
-This project demonstrates the ability to:
-
-* Understand Cypress automation fundamentals.
-* Create and execute end-to-end UI tests.
-* Automate positive and negative login scenarios.
-* Validate homepage and product information.
-* Create reusable Cypress custom commands.
-* Implement Page Object Model for maintainable automation.
-* Organize a Cypress project using a structured folder architecture.
-* Improve test readability and maintainability.
+* UI validation
+* Product navigation and validation
 
 ---
 
@@ -34,20 +20,36 @@ This project demonstrates the ability to:
 **Application:** SauceDemo
 **URL:** https://www.saucedemo.com/
 
-SauceDemo is an e-commerce demo application used for practicing web UI automation and software testing.
+SauceDemo is a demo e-commerce application used for practicing web testing and UI automation.
+
+---
+
+## Objectives
+
+The main objectives of this project are to:
+
+* Learn Cypress end-to-end automation.
+* Automate login functionality.
+* Validate successful and unsuccessful login scenarios.
+* Validate the inventory/products page.
+* Automate product navigation.
+* Validate product details.
+* Create reusable Cypress custom commands.
+* Implement Page Object Model for better test maintainability.
+* Organize an automation project using a structured framework.
 
 ---
 
 ## Tasks Completed
 
-| Task | Description                                  | Status      |
-| ---- | -------------------------------------------- | ----------- |
-| 1    | Setup Cypress Project                        | ✅ Completed |
-| 2    | Automate Login Failure Scenario              | ✅ Completed |
-| 3    | Automate Login Success & Homepage Validation | ✅ Completed |
-| 4    | Automate Product Navigation & Validation     | ✅ Completed |
-| 5    | Create Cypress Custom Commands               | ✅ Completed |
-| 6    | Apply Page Object Model (POM)                | ✅ Completed |
+| Task | Description                         | Status      |
+| ---- | ----------------------------------- | ----------- |
+| 1    | Setup Cypress Project               | ✅ Completed |
+| 2    | Login Failure Scenario              | ✅ Completed |
+| 3    | Login Success & Homepage Validation | ✅ Completed |
+| 4    | Product Navigation & Validation     | ✅ Completed |
+| 5    | Custom Cypress Commands             | ✅ Completed |
+| 6    | Page Object Model (POM)             | ✅ Completed |
 
 ---
 
@@ -55,16 +57,16 @@ SauceDemo is an e-commerce demo application used for practicing web UI automatio
 
 ### 1. Login Failure Scenario
 
-Validates that the application displays an appropriate error message when invalid credentials are entered.
+Validates that an appropriate error message is displayed when incorrect credentials are entered.
 
 **Test Data:**
 
 * Username: `wrong_user`
 * Password: `wrong_password`
 
-**Validation:**
+**Validations:**
 
-* Error message is displayed.
+* Login error message is displayed.
 * Error message indicates that the username and password do not match.
 
 ---
@@ -80,8 +82,8 @@ Validates successful login using valid SauceDemo credentials.
 
 **Validations:**
 
-* User is redirected to `/inventory.html`.
-* Products page title is displayed.
+* User is redirected to the inventory page.
+* Products title is visible.
 * Product inventory list is visible.
 * Shopping cart is visible.
 
@@ -89,7 +91,7 @@ Validates successful login using valid SauceDemo credentials.
 
 ### 3. Product Navigation & Validation
 
-Validates navigation from the inventory page to a specific product details page.
+Validates navigation from the inventory page to the product details page.
 
 **Product Tested:**
 
@@ -100,7 +102,7 @@ Validates navigation from the inventory page to a specific product details page.
 * Product details page opens successfully.
 * Correct product URL is displayed.
 * Product name is visible.
-* Product price is `$29.99`.
+* Product price is displayed as `$29.99`.
 * Product description is visible.
 * Add to Cart button is visible.
 
@@ -112,7 +114,7 @@ A reusable Cypress custom command was created for login functionality.
 
 ### `cy.login()`
 
-The custom command allows tests to perform login without repeating the username, password, and login button selectors.
+The custom command allows tests to log in without repeating the username, password, and login button interactions.
 
 Example:
 
@@ -120,7 +122,7 @@ Example:
 cy.login('standard_user', 'secret_sauce')
 ```
 
-This improves:
+Using a custom command improves:
 
 * Code reusability
 * Test readability
@@ -131,43 +133,43 @@ This improves:
 
 ## Page Object Model
 
-The project uses the Page Object Model to separate page-specific selectors and actions from test scripts.
+The project uses the **Page Object Model (POM)** to separate page-specific selectors and actions from test scripts.
 
 ### LoginPage.js
 
-Responsible for:
+Handles login-page functionality:
 
-* Opening the SauceDemo login page
-* Entering username
-* Entering password
-* Clicking the login button
-* Performing login
-* Validating login error messages
+* Open SauceDemo
+* Enter username
+* Enter password
+* Click Login
+* Perform login
+* Validate login error messages
 
 ### InventoryPage.js
 
-Responsible for:
+Handles inventory-page functionality:
 
-* Validating the inventory page
-* Selecting products
-* Validating product visibility
-* Validating product prices
+* Validate inventory page
+* Select products
+* Validate product visibility
+* Validate product prices
 
 ### ProductPage.js
 
-Responsible for:
+Handles product-details functionality:
 
-* Validating the product details page
-* Validating product name
-* Validating product price
-* Validating the Add to Cart button
+* Validate product details page
+* Validate product name
+* Validate product price
+* Validate Add to Cart button
 
 ---
 
 ## Project Structure
 
 ```text
-Cypress-Automation-Project/
+Assignment-06-Cypress-Automation/
 │
 ├── cypress/
 │   ├── e2e/
@@ -185,10 +187,10 @@ Cypress-Automation-Project/
 │       ├── commands.js
 │       └── e2e.js
 │
+├── .gitignore
 ├── cypress.config.js
 ├── package.json
 ├── package-lock.json
-├── .gitignore
 └── README.md
 ```
 
@@ -197,34 +199,24 @@ Cypress-Automation-Project/
 ## Tools & Technologies
 
 * **Cypress** — End-to-end UI automation
-* **JavaScript** — Test scripting language
-* **Node.js** — JavaScript runtime
-* **Page Object Model (POM)** — Test architecture
-* **Git & GitHub** — Version control and project submission
+* **JavaScript** — Test scripting
+* **Node.js** — Runtime environment
+* **Page Object Model** — Automation architecture
+* **GitHub** — Version control and project submission
 
 ---
 
 ## Installation & Setup
 
-### 1. Clone the Repository
+### 1. Install Dependencies
 
-```bash
-git clone <your-github-repository-url>
-```
-
-### 2. Navigate to the Project
-
-```bash
-cd Cypress-Automation-Project
-```
-
-### 3. Install Dependencies
+After cloning the repository, navigate to the Cypress project folder and run:
 
 ```bash
 npm install
 ```
 
-### 4. Open Cypress
+### 2. Open Cypress Test Runner
 
 ```bash
 npx cypress open
@@ -258,44 +250,43 @@ npx cypress run --e2e --spec "cypress/e2e/product.cy.js"
 
 ## Test Results
 
-All implemented Cypress test cases are passing successfully.
+All implemented Cypress tests passed successfully.
 
-Current test suite:
+### Test Summary
 
-```text
-Login Tests
-✓ Invalid login validation
-✓ Successful login and homepage validation
+**Login Tests**
 
-Product Tests
-✓ Product navigation and details validation
-```
+* ✅ Invalid login validation
+* ✅ Successful login and homepage validation
 
-**Total: 3 tests passing**
+**Product Tests**
+
+* ✅ Product navigation and details validation
+
+**Total: 3 tests passed**
 
 ---
 
 ## Key Skills Demonstrated
 
-* UI Test Automation
-* Cypress
-* JavaScript
+* Cypress UI Automation
 * End-to-End Testing
 * Functional Testing
 * Positive Testing
 * Negative Testing
+* JavaScript
 * Page Object Model
 * Custom Commands
 * Locator Strategy
 * Assertions
 * Test Organization
 * Test Maintainability
-* GitHub Project Management
+* GitHub Repository Management
 
 ---
 
 ## Conclusion
 
-This project demonstrates the implementation of maintainable end-to-end UI automation using Cypress. It covers login validation, homepage verification, product navigation, reusable custom commands, and Page Object Model architecture.
+This project demonstrates the implementation of maintainable UI automation using Cypress. It covers login testing, homepage validation, product navigation, product detail validation, reusable custom commands, and Page Object Model architecture.
 
-The project provides practical experience in structuring an automation framework and writing reusable, readable, and maintainable UI test cases.
+The project provides practical experience in designing structured, readable, and reusable automated test cases for web applications.
