@@ -4,7 +4,9 @@ Welcome to my QA Internship Portfolio!
 
 This repository contains the assignments, test artifacts, automation projects, and documentation I completed during my QA internship. It serves as a record of my learning journey and demonstrates my practical understanding of software quality assurance, manual testing, API testing, performance testing, and test automation.
 
-As I progress in my QA career, this portfolio will continue to grow with additional testing projects and automation work.
+Through these assignments, I gained hands-on experience in requirement analysis, test planning, functional and exploratory testing, bug reporting, REST API testing, performance testing, and UI automation using Selenium, Playwright, and Cypress.
+
+This portfolio represents the completed work from my QA internship and demonstrates my progression from fundamental testing concepts to structured test automation frameworks.
 
 ---
 
@@ -17,6 +19,8 @@ As I progress in my QA career, this portfolio will continue to grow with additio
 | Assignment 03 | Bug Reporting             | Bug Reports, Release Notes                                                  | ✅ Completed |
 | Assignment 04 | API Testing               | Postman Collection, API Test Scripts, JMeter Test Plan, Performance Results | ✅ Completed |
 | Assignment 05 | Selenium Automation       | Selenium Automation Framework, TestNG Tests, POM, Reusable Utilities        | ✅ Completed |
+| Assignment 06 | Playwright Automation     | Playwright UI Automation, POM, Search & Filter Testing, Product Validation  | ✅ Completed |
+| Assignment 07 | Cypress Automation        | Cypress UI Automation, POM, Custom Commands, Login & Product Testing        | ✅ Completed |
 
 ---
 
@@ -90,15 +94,21 @@ As I progress in my QA career, this portfolio will continue to grow with additio
 ### Test Automation
 
 * Selenium WebDriver
-* TestNG
+* Playwright
+* Cypress
 * Java
+* JavaScript
+* TestNG
 * Maven
+* Node.js
 * Page Object Model (POM)
 * Reusable Utility Methods
+* Cypress Custom Commands
 * Explicit Waits
 * UI Element Validation
 * Automated Login Testing
 * Product Navigation Testing
+* Product Search and Filtering
 * Test Suite Execution
 
 ---
@@ -106,24 +116,30 @@ As I progress in my QA career, this portfolio will continue to grow with additio
 ## Tools & Technologies
 
 * Java
+* JavaScript
+* Node.js
 * Selenium WebDriver
+* Playwright
+* Cypress
 * TestNG
 * Maven
 * Postman
 * Apache JMeter
 * IntelliJ IDEA
+* Visual Studio Code
 * Microsoft Word
 * Microsoft Excel
 * Git & GitHub
 * Gherkin
 * TestWorthy
+* Google Chrome
 
 ---
 
 ## Repository Structure
 
 ```text
-QA-Internship-Portfolio
+QA-Internship
 │
 ├── README.md
 │
@@ -147,111 +163,29 @@ QA-Internship-Portfolio
 │   ├── Postman
 │   │   ├── JSONPlaceholder API Testing.postman_collection.json
 │   │   ├── JSONPlaceholder Environment.postman_environment.json
-│   │   └── Postman
-│   │       └── screenshots
+│   │   └── screenshots
 │   │
 │   └── JMeter
 │       ├── JSONPlaceholder_Load_Test.jmx
 │       └── JMeterscreenshots
 │
-└── Assignment-05-Selenium-Automation
-    ├── README.md
-    ├── .gitignore
-    ├── pom.xml
-    ├── testng.xml
-    │
-    ├── screenshots
-    │   └── test-execution-results.png
-    │
-    └── src
-        ├── main
-        │   └── java
-        │       ├── pages
-        │       │   ├── LoginPage.java
-        │       │   ├── InventoryPage.java
-        │       │   └── ProductPage.java
-        │       │
-        │       └── utils
-        │           ├── DriverFactory.java
-        │           └── ElementUtils.java
-        │
-        └── test
-            └── java
-                └── tests
-                    ├── BaseTest.java
-                    ├── LoginTest.java
-                    └── ProductTest.java
+├── Assignment-05-Selenium-Automation
+│   ├── README.md
+│   ├── .gitignore
+│   ├── pom.xml
+│   ├── testng.xml
+│   │
+│   ├── screenshots
+│   │   └── test-execution-results.png
+│   │
+│   └── src
+│       ├── main
+│       │   └── java
+│       │       ├── pages
+│       │       │   ├── LoginPage.java
+│       │       │   ├── InventoryPage.java
+│       │       │   └── ProductPage.java
+│       │       │
+│       │       └── utils
+│       │           ├── DriverFactory.java
 ```
-
----
-
-## Assignment Highlights
-
-### Assignment 01 – Requirement Analysis
-
-Focused on understanding software requirements and converting them into testable requirements and acceptance criteria.
-
-### Assignment 02 – Online Book Store Testing
-
-Covered test planning, test case design, test execution, and validation of an online book store application.
-
-### Assignment 03 – Bug Reporting
-
-Focused on exploratory and functional testing, defect identification, bug documentation, severity and priority assignment, and release notes preparation.
-
-### Assignment 04 – API Testing
-
-Used Postman to perform functional REST API testing and Apache JMeter to perform basic load testing.
-
-The assignment covered:
-
-* GET, POST, PUT, and DELETE requests
-* Automated API validations
-* HTTP status code validation
-* Response validation
-* API test execution
-* Basic load testing
-* Performance result analysis
-
-### Assignment 05 – Selenium Automation
-
-Built a Selenium WebDriver automation framework using Java, TestNG, and Maven for the SauceDemo web application.
-
-The assignment covered:
-
-* Selenium framework setup
-* Invalid login automation
-* Successful login automation
-* Homepage validation
-* Product navigation and validation
-* Reusable Selenium utilities
-* Page Object Model (POM)
-* Explicit waits
-* TestNG test execution
-
-The current automation suite contains **3 automated tests**, with all **3 tests passing successfully**.
-
----
-
-## QA Testing Approach
-
-Throughout these assignments, I have gained practical experience across different stages of the software testing lifecycle, including:
-
-1. Understanding and analyzing requirements
-2. Designing test scenarios and test cases
-3. Performing functional and exploratory testing
-4. Identifying and documenting defects
-5. Testing REST APIs
-6. Performing basic performance testing
-7. Automating UI test scenarios
-8. Applying reusable automation practices
-9. Executing and analyzing automated test results
-10. Maintaining testing artifacts and documentation
-
----
-
-## Author
-
-**Muzna Hashmi**
-
-Software Engineering Graduate | Junior QA Specialist
