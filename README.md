@@ -143,22 +143,22 @@ QA-Internship
 │
 ├── README.md
 │
-├── Assignment-01-Requirement-Analysis
+├── 1.Requirement-Analysis
 │   ├── README.md
 │   ├── Requirement_Analysis_Document.docx
 │   └── Requirement_Analysis_Document.pdf
 │
-├── Assignment-02-Online-Book-Store-Testing
+├── 2.Online-Book-Store-Testing
 │   ├── README.md
 │   ├── Test_Plan
 │   ├── Test_Cases
 │   └── Test_Execution_Report
 │
-├── Assignment-03-Bug-Reporting
+├── 3.Bug Reports
 │   ├── README.md
 │   └── Bug_Report_and_Release_Notes.xlsx
 │
-├── Assignment-04-API-Testing
+├── 4.API Testing
 │   ├── README.md
 │   ├── Postman
 │   │   ├── JSONPlaceholder API Testing.postman_collection.json
@@ -169,7 +169,7 @@ QA-Internship
 │       ├── JSONPlaceholder_Load_Test.jmx
 │       └── JMeterscreenshots
 │
-├── Assignment-05-Selenium-Automation
+├── Selenium-Automation
 │   ├── README.md
 │   ├── .gitignore
 │   ├── pom.xml
@@ -197,7 +197,7 @@ QA-Internship
 │                   ├── LoginTest.java
 │                   └── ProductTest.java
 │
-├── Assignment-06-Playwright-Automation
+├── Playwright Automation
 │   ├── README.md
 │   ├── pages
 │   │   ├── DarazHomePage.js
@@ -211,7 +211,7 @@ QA-Internship
 │   ├── package.json
 │   └── package-lock.json
 │
-└── Assignment-07-Cypress-Automation
+└── Cypress Automation
     ├── README.md
     ├── .gitignore
     ├── cypress.config.js
